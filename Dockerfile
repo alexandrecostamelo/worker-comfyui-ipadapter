@@ -2,9 +2,7 @@ FROM runpod/worker-comfyui:5.8.5-base
 
 # Instalar IPAdapter custom node
 RUN cd /comfyui/custom_nodes && \
-    git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git && \
-    cd ComfyUI_IPAdapter_plus && \
-    pip install -r requirements.txt
+    git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 
 # Baixar SDXL
 RUN wget -q -O /comfyui/models/checkpoints/sd_xl_base_1.0.safetensors \
