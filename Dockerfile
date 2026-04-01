@@ -4,9 +4,10 @@ FROM runpod/worker-comfyui:5.8.5-base
 RUN cd /comfyui/custom_nodes && \
     git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git
 
-# Instalar ComfyUI Impact Pack (contém LoadImageBase64)
+# Instalar node com LoadImageFromUrl
 RUN cd /comfyui/custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
+    git clone https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait.git || \
+    git clone https://github.com/tsogzark/ComfyUI-load-image-from-url.git
 
 # Baixar SDXL
 RUN wget -q -O /comfyui/models/checkpoints/sd_xl_base_1.0.safetensors \
